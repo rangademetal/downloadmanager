@@ -1,27 +1,18 @@
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 import sys
-import os
 import urllib.request
-from function import memory
+from config import memory
 from PyQt5.uic import loadUiType
 import urllib.request
-import time
-import mysql.connector
 from datetime import date
 import os
-from os import path
 
-host = 'hosting1993073.online.pro'
-user = '00286862_downloadmanager'
-password = 'downloadmanager'
-database = '00286862_downloadmanager'
 
-db = mysql.connector.connect(host=host, user=user, password=password, database=database)
+from config.database import db
+
 cursor = db.cursor()
 
-ui,_ = loadUiType('gui_test.ui')
+ui, _ = loadUiType('gui_test.ui')
 
 class MainApp(QMainWindow , ui):
     def __init__(self , parent=None):
